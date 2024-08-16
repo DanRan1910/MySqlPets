@@ -109,8 +109,6 @@ insert into tbFornecedores (nome,email,cnpj)
 
 
 
-
-
 insert into tbClientes (nome, email, telCelular)
 	values('Julia Maria Pinto',
 		'juliaajulia@gmail.com', '93728-1726');
@@ -118,8 +116,6 @@ insert into tbClientes (nome, email, telCelular)
 insert into tbClientes (nome, email, telCelular)
 	values('Kendrick Lamar',
 		'TheBestOfDrake@gmail.com', '93218-1777');
-
-
 
 insert into tbUsuarios(nome,senha,codFunc)
 	values ('amarildo.santiago', '1234567' ,1);
@@ -136,12 +132,11 @@ insert into tbProdutos(descricao,quantidade,valor,validade,dataEntrada,
 
 insert into tbProdutos(descricao,quantidade,valor,validade,dataEntrada,
 						horaEntrada,codForn)
-	values ('Copo Plastico',45,150.00, '2031/01/09','2021/04/05','03:54:11',2);
+	values ('Copos Plastico',45,10.00, '2031/01/09','2021/04/05','03:54:11',2);
 
 insert into tbProdutos(descricao,quantidade,valor,validade,dataEntrada,
 						horaEntrada,codForn)
-	values ('Mercurio',2,22850.00, '2033/01/09','2022/14/05','14:54:14',1);
-
+	values ('Granito Materializado',2,22850.00, '2033/01/09','2022/14/05','14:54:14',1);
 
 
 
@@ -156,8 +151,9 @@ insert into tbVendas(dataVenda,horaVenda,quantidade,codUsu,codCli,codProd)
 
 insert into tbVendas(dataVenda,horaVenda,quantidade,codUsu,codCli,codProd)
 	values ('2024/08/08','20:00:57',10,1,2,2);
-
 		
+
+
 
 -- visualizando os registros das tabelas
 select * from tbFuncionarios;
@@ -166,3 +162,15 @@ select * from tbClientes;
 select * from tbUsuarios;
 select * from tbProdutos;
 select * from tbVendas;
+
+
+update tbProdutos set descricao = 'Esfiha de Chocolate', valor = 7.00
+	where codProd = 1;
+
+update tbProdutos set descricao = 'Pastel Estupidamente Oleoso', valor = 10.00
+	where codProd = 2;
+
+
+--Vizualizando Após alterações
+
+select * from tbProdutos;
